@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reto Rápido: Suma y Resta</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="hero">
+      <div>
+        <h1>Reto Rápido</h1>
+        <p>Sumas y restas contrarreloj. ¡2 errores y se termina!</p>
+      </div>
+    </header>
+
+    <main class="game-card" id="gameCard">
+      <section class="panel" id="startPanel">
+        <div class="logo">+</div>
+        <h2>Juego de operaciones rápidas</h2>
+        <p>Responde el resultado antes de que se acabe el tiempo.</p>
+        <div class="buttons-row">
+          <button class="btn primary" id="newGameBtn">Nuevo juego</button>
+          <button class="btn secondary" id="resumeGameBtn">Reanudar</button>
+        </div>
+      </section>
+
+      <section class="panel hidden" id="playPanel">
+        <div class="status-row">
+          <div class="status-item">
+            <span>Nivel</span>
+            <strong id="levelLabel">1</strong>
+          </div>
+          <div class="status-item">
+            <span>Errores</span>
+            <strong id="mistakesLabel">0/2</strong>
+          </div>
+          <div class="status-item">
+            <span>Puntos</span>
+            <strong id="scoreLabel">0</strong>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <div class="question-label">¿Cuánto es?</div>
+          <div class="question" id="questionText">8 + 3</div>
+        </div>
+
+        <div class="timer-row">
+          <div class="timer-text"><span id="timeLeft">10</span>s restantes</div>
+          <div class="timer-bar">
+            <div class="timer-fill" id="timerFill"></div>
+          </div>
+        </div>
+
+        <div class="answer-row">
+          <input type="number" id="answerInput" placeholder="Escribe tu respuesta" autocomplete="off" />
+          <button class="btn primary" id="submitBtn">Enviar</button>
+        </div>
+      </section>
+
+      <section class="panel hidden" id="gameOverPanel">
+        <div class="game-over">
+          <h2>¡Juego terminado!</h2>
+          <p id="finalMessage">Has perdido 2 veces. Tu nivel final fue <span id="finalLevel">1</span>.</p>
+          <button class="btn primary" id="restartBtn">Iniciar de nuevo</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
